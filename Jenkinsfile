@@ -20,7 +20,7 @@ pipeline {
         stage('build') {
             steps {
              
-               sh "docker build -it Employee-management-System ."
+               sh "docker build -t Employee-management-System ."
             }
             
         }
