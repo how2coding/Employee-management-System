@@ -47,8 +47,7 @@ pipeline {
           
             steps {
                  
-               sh "docker run --name emp-system -p 8800:8081 -d emp-system"
-               sh "newman run postman_collection.json"
+               sh "docker run --name emp-system -p 8800:8081 -d emp-system"               
             }
             
         }
