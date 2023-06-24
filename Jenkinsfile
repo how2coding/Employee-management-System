@@ -17,7 +17,7 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']],
                     userRemoteConfigs: [[url: 'https://github.com/how2coding/Employee-management-System.git']]])
                 
-                sh 'cat src/main/resources/application.properties | sed "s/{{mariapassword}}/${mariapassword}/g" src/main/resources/application.properties'
+                sh 'cat src/main/resources/application.properties | sed -i "s/{{mariapassword}}/${mariapassword}/g" src/main/resources/application.properties'
                 sh "ls -lst"
             }
         }
