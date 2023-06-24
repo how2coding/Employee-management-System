@@ -55,7 +55,7 @@ pipeline {
           
             steps {
                  
-               sh "sleep 20"
+               sh "sleep 60"
                sh "newman run postman_collection.json"
             }
             
