@@ -20,7 +20,7 @@ pipeline {
         stage('build') {
             steps {
              
-               sh "docker build -t Employee-management-System ."
+               sh "docker build -t emp-system ."
             }
             
         }
@@ -28,7 +28,7 @@ pipeline {
         stage('run') {
           
             steps {
-               sh "docker run --name Employee-management-System -p 8800:8081 -d Employee-management-System"
+               sh "docker run --name emp-system -p 8800:8081 -d emp-system"
                
             }
             
