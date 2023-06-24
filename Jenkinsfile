@@ -34,8 +34,9 @@ pipeline {
         stage('run') {
           
             steps {
+                 
                sh "docker run --name emp-system -p 8800:8081 -d emp-system"
-               
+               sh "newman run postman_collection.json --reporters cli,htmlextra,junit --reporter-htmlextra-export newman/report.xml"
             }
             
         }
