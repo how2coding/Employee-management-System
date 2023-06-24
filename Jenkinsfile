@@ -30,7 +30,7 @@ pipeline {
             }
             
         }
-
+/*
       stage('rm') {
          
             steps {
@@ -40,7 +40,7 @@ pipeline {
             }
 
       }
-        
+    */    
         
           
         stage('run') {
