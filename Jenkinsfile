@@ -30,13 +30,38 @@ pipeline {
             }
             
         }
+
+      stage('rm') {
+           script {
+               try {
+                    steps {
+                       
+                       sh "docker kill emp-system "
+                        sh "docker rm emp-system "
+                    }
+               
+               } catch (Exception e) {
+                   // execute if any exception is thrown
+            }
+        }
         
+        
+          
         stage('run') {
           
             steps {
                  
                sh "docker run --name emp-system -p 8800:8081 -d emp-system"
-               sh "newman run postman_collection.json --reporters cli,htmlextra,junit --reporter-htmlextra-export newman/report.xml"
+               sh "newman run postman_collection.json"
+            }
+            
+        }
+         stage('test api') {
+          
+            steps {
+                 
+               sh "sleep 20"
+               sh "newman run postman_collection.json"
             }
             
         }
