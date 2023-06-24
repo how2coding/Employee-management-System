@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label: 'ubuntu1'
+    }
 
 
 
@@ -18,15 +20,15 @@ pipeline {
         stage('build') {
             steps {
              
-               sh "echo build"
+               sh "docker build -it Employee-management-System ."
             }
             
         }
         
-        stage('deploy') {
+        stage('run') {
           
             steps {
-               sh "echo deploy"
+               sh "docker run --name Employee-management-System -p 8800:8081 -d Employee-management-System"
                
             }
             
