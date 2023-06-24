@@ -3,6 +3,10 @@ pipeline {
         label 'ubuntu1'
     }
 
+  parameters {
+      string 'mariapassword'
+    }
+
 
 
     stages {
@@ -12,8 +16,8 @@ pipeline {
      
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']],
                     userRemoteConfigs: [[url: 'https://github.com/how2coding/Employee-management-System.git']]])
-                sh 'mariapassword=${mariapassword}'                    
-                sh 'cat src/main/resources/application.properties | sed "s/{{mariapassword}}/$VERSION/g" src/main/resources/application.properties'
+                
+                sh 'cat src/main/resources/application.properties | sed "s/{{mariapassword}}/${mariapassword}/g" src/main/resources/application.properties'
                 sh "ls -lst"
             }
         }
