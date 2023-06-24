@@ -19,7 +19,7 @@ pipeline {
 
         stage('build') {
             steps {
-             
+               sh "mvn install"
                sh "docker build -t emp-system ."
             }
             
