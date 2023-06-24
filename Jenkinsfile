@@ -8,7 +8,7 @@ pipeline {
         stage('checkout') {
             steps {
      
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']],
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']],
                     userRemoteConfigs: [[url: 'https://github.com/how2coding/Employee-management-System.git']]])
                 sh "ls -lst"
             }
