@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label: 'ubuntu1'
+        label 'ubuntu1'
     }
 
 
