@@ -32,18 +32,13 @@ pipeline {
         }
 
       stage('rm') {
-           script {
-               try {
-                    steps {
-                       
-                       sh "docker kill emp-system "
-                        sh "docker rm emp-system "
-                    }
+         
+            steps {
                
-               } catch (Exception e) {
-                   // execute if any exception is thrown
+               sh "docker kill emp-system "
+                sh "docker rm emp-system "
             }
-        }
+
       }
         
         
