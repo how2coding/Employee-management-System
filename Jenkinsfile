@@ -51,16 +51,16 @@ pipeline {
             }
             
         }
-        /*
+        
          stage('test api') {
           
             steps {
                  
                sh "sleep 60"
-               sh "newman run postman_collection.json"
+               sh "newman run p_collection.json"
             }
             
         }
-        */
+        
     }
 }
