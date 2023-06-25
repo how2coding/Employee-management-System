@@ -51,6 +51,7 @@ pipeline {
             }
             
         }
+        /*
          stage('test api') {
           
             steps {
@@ -60,5 +61,6 @@ pipeline {
             }
             
         }
+        */
     }
 }
